@@ -1,0 +1,79 @@
+.menu-item {
+    min-width: 30%;
+    height: 240px;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 0 7.5px 15px;
+    // to avoid img overflow when scaling
+    overflow: hidden;
+
+    &:hover {
+        // if u hover cursor goes to a pointer
+        cursor: pointer;
+
+        // scale any elem with property background-image
+        & .background-image {
+            transform: scale(1.1);
+            // take scaling for 6s with common math calc which determines the 
+            // speed in which this transformation occurs
+            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        }
+
+        & .content {
+            opacity: 1;
+        }
+    }
+
+
+    &.large {
+        height: 360px;
+    }
+    
+    // like .menu-item:first-child {}
+    &:first-child {
+        margin-right: 7.5px;
+    }
+
+    &:last-child {
+        margin-left: 7.5px;
+    }
+
+    .background-image {
+        // to make img the size of our container
+        width:100%;
+        height:100%;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .content {
+        height: 90px;
+        padding: 0 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid black;
+        background-color: black;
+        color :rgba(255, 255, 255, 0.74);
+        opacity: 0.85;
+        // no matter what happens position of content will be valvuloaten only
+        // from the values we provided in the .content
+        position: absolute;
+
+        .title {
+            color :rgba(255, 255, 255, 0.74);
+            font-weight: bold;
+            margin-bottom: 6px;
+            font-size: 22px;
+        }
+
+        .subtitle {
+            font-weight: normal;
+            font-size: 16px;
+        }
+    }
+}
