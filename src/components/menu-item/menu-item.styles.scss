@@ -10,6 +10,7 @@
     // to avoid img overflow when scaling
     overflow: hidden;
 
+    // & means the class above it plus some additional styling for hover selector
     &:hover {
         // if u hover cursor goes to a pointer
         cursor: pointer;
@@ -32,7 +33,7 @@
         height: 360px;
     }
     
-    // like .menu-item:first-child {}
+    // like .menu-item:first-child {} menu item first child gets this style
     &:first-child {
         margin-right: 7.5px;
     }
